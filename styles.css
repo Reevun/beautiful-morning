@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Fredoka One", sans-serif;
+  font-size: 3em;
+  color: #333;
+}
+
+p {
+  font-family: "Fredoka One", sans-serif;
+  font-size: 0.7em;
+  color: #333;
+}
+
+.balloons {
+  position: relative;
+  margin-top: 30px;
+}
+
+.balloon {
+  width: 100px;
+  height: 150px;
+  background-image: url('balloon.png'); /* You can replace 'balloon.png' with your balloon image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  animation: float 6s infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.balloon1 {
+  left: 10%;
+  animation-delay: 1s;
+}
+
+.balloon2 {
+  left: 30%;
+  animation-delay: 2s;
+}
+
+.balloon3 {
+  left: 50%;
+  animation-delay: 3s;
+}
+
+.balloon4 {
+  left: 70%;
+  animation-delay: 4s;
+}
+
+.confetti {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.confetti-piece {
+  width: 10px;
+  height: 10px;
+  background-color: #f00;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: confetti 3s ease-out infinite;
+}
+
+.hidden-message {
+  display: none;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-family: "Fredoka One", sans-serif; /* Gunakan font Fredoka One */
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #090909; /* Warna latar belakang */
+  color: #fff; /* Warna teks */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Efek transisi untuk perubahan warna */
+}
+
+/* Efek hover */
+.button:hover {
+  background-color: #f20424; /* Warna latar belakang ketika dihover */
+}
+
+/* Efek ketika tombol diklik */
+.button:active {
+  transform: translateY(2px); /* Efek turun sedikit saat tombol diklik */
+}
+
+.hidden-message {
+  display: none;
+  font-family: "Fredoka One", sans-serif; /* Gunakan font Fredoka One */
+  margin-top: 20px; /* Menambahkan margin top agar pesan tidak dempet dengan tombol */
+}
+
+
+
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotateZ(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotateZ(720deg);
+    opacity: 0;
+  }
+}
